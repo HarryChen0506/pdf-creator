@@ -1,9 +1,13 @@
 'use strict';
 
+const webRouter = require('./router/web');
+const pdfRouter = require('./router/pdf');
+
+
 /**
  * @param {Egg.Application} app - egg application
  */
 module.exports = app => {
-  const { router, controller } = app;
-  router.get('/', controller.home.index);
+  pdfRouter(app);
+  webRouter(app);
 };
