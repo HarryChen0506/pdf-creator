@@ -4,8 +4,8 @@ const puppeteer = require('puppeteer');
 const { PDFDocument } = require('pdf-lib');
 
 const Controller = require('egg').Controller;
-const url = 'http://localhost:8001/login';
-const url_1 = 'http://localhost:8001/core/manage?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaWQiOiJiOGY2NDIxOS1iOTA1LTRiZDEtOTUwMi05ZThhZWY5OTQ1YjciLCJpYXQiOiIxNjEyNTE1MjQ1IiwiaXNzIjoicmV0aW5hLXBsYXRmb3JtLnZveGVsY2xvdWQubmV0LmNuIiwiYXVkIjoidm94Y2VsY2xvdWQiLCJ1aWQiOiI1NCJ9.xKnUufpMhT3zG1M4FTIY-oyDr7am3dJ707_LhX0zDtc';
+const url = 'https://retina-ms-test.voxelcloud.net.cn/login';
+const url_1 = 'https://retina-ms-test.voxelcloud.net.cn/core/manage?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaWQiOiJiOGY2NDIxOS1iOTA1LTRiZDEtOTUwMi05ZThhZWY5OTQ1YjciLCJpYXQiOiIxNjEyNTE1MjQ1IiwiaXNzIjoicmV0aW5hLXBsYXRmb3JtLnZveGVsY2xvdWQubmV0LmNuIiwiYXVkIjoidm94Y2VsY2xvdWQiLCJ1aWQiOiI1NCJ9.xKnUufpMhT3zG1M4FTIY-oyDr7am3dJ707_LhX0zDtc';
 // const url_2 = 'https://lnma.voxelcloud.net.cn/dashboard?token=0XZzxWYmBiOiUGdhR3cf5Wan9GbiACLzEzN1ETNyEjNxAiOiAXbhR3cl1Wa0JCIsIyMyEjbp1GZhJCI6ICZy92dzNXYwJCIsIibp1GZhJCI6ISZtFmbyV2c1Jye';
 function bytesToBinary(ab) {
   var buf = new Buffer(ab.byteLength);
