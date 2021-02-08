@@ -15,7 +15,7 @@ function bytesToBinary(ab) {
   }
   return buf;
 }
-
+const url_ruici = 'http://192.168.11.191:9000/ruici'
 class PdfController extends Controller {
   async index() {
     const { ctx } = this;
@@ -50,6 +50,25 @@ class PdfController extends Controller {
       'Content-Type': 'application/pdf',
     });
     ctx.response.body = bytesToBinary(pdfBytes)
+
+    await browser.close();
+  }
+  async ruici() {
+    const { ctx } = this;
+    const browser = await puppeteer.launch();
+    const page = await browser.newPage();
+
+    await page.goto(url_ruici, { waitUntil: 'networkidle0' });
+    const coverBuffer = await page.pdf({
+      format: 'A4',
+      printBackground: true,
+      scale: 1.33,
+      '-webkit-print-color-adjust': 'exact',
+    });
+    ctx.response.set({
+      'Content-Type': 'application/pdf',
+    });
+    ctx.response.body = coverBuffer
 
     await browser.close();
   }
